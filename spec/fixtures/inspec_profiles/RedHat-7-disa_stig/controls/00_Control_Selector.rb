@@ -1,8 +1,7 @@
-skips = {
-  'V-71965' => 'N/A'
-}
+skips = {}
 overrides = []
 subsystems = [ 'pam' ]
+
 
 require_controls 'disa_stig-el7-baseline' do
   skips.each_pair do |ctrl, reason|
@@ -26,4 +25,14 @@ require_controls 'disa_stig-el7-baseline' do
       end
     end
   end
+
+  ## Overrides ##
+
+# # USEFUL DESCRIPTION
+# control 'V-IDENTIFIER' do
+#   # Enhancement, leave this out if you just want to add a different test
+#   overrides << self.to_s
+#
+#   only_if { file('whatever').exist? }
+# end
 end

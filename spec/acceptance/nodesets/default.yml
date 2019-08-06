@@ -19,6 +19,10 @@ HOSTS:
         mirrorlist: 'https://mirrors.fedoraproject.org/metalink?repo=epel-6&arch=$basearch'
         gpgkeys:
           - https://getfedora.org/static/0608B895.txt
+      chef-current:
+        baseurl: 'https://packages.chef.io/repos/yum/current/el/7/$basearch'
+        gpgkeys:
+          - https://packages.chef.io/chef.asc
   el7:
     roles:
       - client
@@ -30,6 +34,10 @@ HOSTS:
         mirrorlist: 'https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=$basearch'
         gpgkeys:
           - https://getfedora.org/static/352C64E5.txt
+      chef-current:
+        baseurl: 'https://packages.chef.io/repos/yum/current/el/7/$basearch'
+        gpgkeys:
+          - https://packages.chef.io/chef.asc
 CONFIG:
 <% if ENV['BEAKER_PUPPET_COLLECTION'] -%>
   puppet_collection: <%= ENV['BEAKER_PUPPET_COLLECTION'] %>
